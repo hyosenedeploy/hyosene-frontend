@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* or your theme background */
+}
+/* Input field styling */
+.input-field {
+  @apply w-full bg-[#0b0f1d] text-gray-200 placeholder-gray-500 rounded-lg px-4 py-3 focus:outline-none transition-all duration-300;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#0b0f1d, #0b0f1d),
+    linear-gradient(to right, #7EC3E6, #002479);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.input-field:focus {
+  box-shadow: 0 0 15px rgba(126, 195, 230, 0.6);
+  transform: scale(1.02);
+}
+
+/* Submit button */
+.gradient-button {
+  @apply px-8 py-3 rounded-full font-semibold transition-all duration-300;
+  color: #7EC3E6;
+  background: transparent;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#020b18, #020b18),
+    linear-gradient(to right, #7EC3E6, #002479);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.gradient-button:hover {
+  color: #000;
+  background-image: linear-gradient(
+    135deg,
+    #9fd9ff,
+    #7EC3E6,
+    #002479
+  ); /* subtle glossy effect */
+  box-shadow: 0 0 20px rgba(126, 195, 230, 0.6),
+    inset 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* --- Social icon ring --- */
+.social-ring {
+  @apply relative flex items-center justify-center w-12 h-12 rounded-full text-white transition-all duration-300;
+  background: #0b0f1d;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#0b0f1d, #0b0f1d),
+    linear-gradient(to right, #7EC3E6, #002479);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Subtle glossy + glow hover */
+.social-ring:hover {
+  box-shadow: 0 0 15px rgba(126, 195, 230, 0.6),
+    inset 0 0 10px rgba(255, 255, 255, 0.2);
+  background-image: linear-gradient(#0b0f1d, #0b0f1d),
+    linear-gradient(135deg, #9fd9ff, #7EC3E6, #002479);
+  transform: scale(1.08) translateY(-2px);
+}
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
